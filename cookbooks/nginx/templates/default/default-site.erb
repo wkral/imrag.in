@@ -8,6 +8,10 @@ server {
     alias <%= node.base.app_dir %>/css/;
   }
 
+  location /js/ {
+    alias <%= node.base.app_dir %>/js/;
+  }
+
   location /images/ {
     alias <%= node.base.app_dir %>/images/;
   }
