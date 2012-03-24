@@ -1,5 +1,8 @@
 var IRAGE = {};
 
+//apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
+//apikey:"43g48je4fubcb9pngsbvqjc2",  // sandbox api key 
+var APIKEY ="43g48je4fubcb9pngsbvqjc2"; 
 
 /**
  * query by name
@@ -13,7 +16,7 @@ IRAGE.findByName = function (text) {
            what: text,
            fmt: 'json',
            where: 'Vancouver', // XXX: need bigger place to get more chance 
-           apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
+           apikey:APIKEY,  // sandbox api key 
            pgLen: 5,
            UID: Math.random(), 
        },
@@ -30,7 +33,7 @@ IRAGE.findByLocation = function (lon,lat) {
            what: 'business',
            fmt: 'json',
            where: 'cZ'+lon+','+lat, // cZ{longitude},{latitude}
-           apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
+           apikey:APIKEY,  // sandbox api key 
            pgLen: 5,
            UID: Math.random(), 
        },
@@ -55,7 +58,7 @@ IRAGE.display = function (data) {
         // even slower they are not happy..
         setTimeout(
             IRAGE.getYellowapiBusnCallBack(name,busn.address.prov,busn.id,busn.merchantUrl, uid)
-            , 1200*i);
+            , 1500*i);
     }
 
 };
@@ -71,7 +74,7 @@ IRAGE.getYellowapiBusnCallBack = function (name, prov, id, url, uid) {
                    'bus-name': name.substr(0,1),   //XXX: the listing only works with limited string!
                    listingId: id,
                    fmt: 'json',
-                   apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // pixre.org sandbox api key 
+                   apikey:APIKEY,  // sandbox api key 
                    UID: uid, // unique use id :)
                },
                success: function (busndata) {
