@@ -4,10 +4,10 @@
         <title>iRage</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
 	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
-		<script type="text/javascript" src="js/irage.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		<script type="text/javascript" src="/js/jquery.geolocation.js"></script>
+		<script type="text/javascript" src="/js/irage.js"></script>
     </head>
     <body>
 	<div data-role="page">
@@ -17,7 +17,7 @@
 		<h3>Find a business:</h3>
 		<div id="nearby" class="button">Near By</div>
 		<div id="byname" class="button">By Name</div>
-		<a href="" id="rage-button" data-role="button" data-inline="true" data-theme="b">Rage</a>
+		<a href="#" id="rage-button" data-role="button" data-inline="true" data-theme="b">Rage</a>
 		<script>
 		$("#rage-button").click(function () {
 		    $.geolocation.find(function(location){
