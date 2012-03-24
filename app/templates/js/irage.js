@@ -21,8 +21,21 @@ IRAGE.findByName = function (text) {
     });
 };
 
-IRAGE.findByLocation = function (text) {
-    throw "not implemented";
+IRAGE.findByLocation = function (lon,lat) {
+    //http://www.yellowapi.com/docs/places/#findbusiness
+    $.ajax({
+       url: "/yellowapi/FindBusiness/",  // XXX: yellowapi doesnt to jsonP :(
+       dataType: 'json',
+       data: { 
+           what: '',
+           fmt: 'json',
+           where: 'cZ'+lon+','+lat, // cZ{longitude},{latitude}
+           apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
+           pgLen: 5,
+           UID: Math.random(), 
+       },
+       success: IRAGE.display,
+    });
 };
 
 
