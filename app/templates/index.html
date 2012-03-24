@@ -2,30 +2,46 @@
 <html>
     <head>
         <title>iRage</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-		<script type="text/javascript" src="/js/jquery.geolocation.js"></script>
-		<script type="text/javascript" src="/js/irage.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
+		<script type="text/javascript" src="js/irage.js"></script>
     </head>
-    <body>
-	<div data-role="page">
-	    <div data-role="content" class="container">
-		<h1>iRage</h1>
-		<h2>Express your rage</h2>
-		<h3>Find a business:</h3>
-		<div id="nearby" class="button">Near By</div>
-		<div id="byname" class="button">By Name</div>
-		<a href="#" id="rage-button" data-role="button" data-inline="true" data-theme="b">Rage</a>
-		<script>
-		$("#rage-button").click(function () {
-		    $.geolocation.find(function(location){
-		       alert(location.latitude+", "+location.longitude);
-		    });
-		});
-		</script>
+    <body>	
+	<div data-role="page" data-theme="d">
+	    <div data-role="header" id="header">
+		<h1>
+		    
+		</h1>
 	    </div>
+	    <div data-role="content" class="container">
+		<img src="rage.png" class="logo-rage">
+		<form action="" method="post">
+		    <div data-role="fieldcontain" class="ui-hide-label center">
+			<label for="searchbiz">Business Name</label>
+			<input type="text" name="searchbiz" id="searchbiz" value="" placeholder="Business Name" />
+		    </div>
+		</form>
+		<div style="padding-left:85%"><a href="#" id="search-button" data-role="button" data-inline="true" data-theme="a">Search</a></div>
+		<script>
+		    $("#search-button").click(function () {
+			IRAGE.findByName($("#searchbiz").val());
+		    });
+		</script>
+		<div id="results"></div>
+	    </div>
+	    <div data-role="footer" data-position="fixed" data-id="thefooternav">
+		<div data-role="navbar">
+		    <ul>
+		      <li><a href="index.html" class="ui-state-persist ui-btn-active">Search</a></li>
+		      <li><a href="near-by.html">Nearby</a></li>
+		    </ul>
+		</div>
+	    </div>  
 	</div>
     </body>
 </html>
