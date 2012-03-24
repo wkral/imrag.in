@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iRage</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
+		<script type="text/javascript" src="js/irage.js"></script>
+    </head>
+    <body>
+	<div data-role="page">
+	    <div data-role="content" class="container">
+		<h1>iRage</h1>
+		<h2>Express your rage</h2>
+		<a href="" id="rage-button" data-role="button" data-inline="true" data-theme="b">Rage Near by</a>
+		<script>
+		$("#rage-button").click(function () {
+		    $.geolocation.find(function(location){
+                IRAGE.findByLocation(location.longitude, location.latitude);
+		    });
+		});
+		</script>
+        <div id="results"></div>
+	    </div>
+	</div>
+    </body>
+</html>
