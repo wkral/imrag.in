@@ -10,7 +10,12 @@
 		<script type="text/javascript" src="js/irage.js"></script>
     </head>
     <body>
-	<div data-role="page">
+	<div data-role="page" data-theme="b">
+	    <div data-role="header" id="header">
+		<h1>
+		    iRage
+		</h1>
+	    </div>
 	    <div data-role="content" class="container">
 		<h1>iRage</h1>
 		<h2>Express your rage</h2>
@@ -22,7 +27,15 @@
 		    });
 		});
 		</script>
-        <div id="results"></div>
+		<div id="results"></div>
+	    </div>
+	    <div data-role="footer" data-position="fixed" data-id="thefooternav">
+		<div data-role="navbar">
+		    <ul>
+		      <li><a href="index.html">Search</a></li>
+		      <li><a href="near-by.html" class="ui-state-persist ui-btn-active">Nearby</a></li>
+		    </ul>
+		</div>
 	    </div>
 	</div>
     </body>
