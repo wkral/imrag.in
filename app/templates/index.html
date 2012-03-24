@@ -5,22 +5,35 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
+		<script type="text/javascript" src="js/irage.js"></script>
     </head>
     <body>
-        <div class="container">
-            <h1>iRage</h1>
-            <h2>Express your rage</h2>
-            <h3>Find a business:</h3>
-            <div id="nearby" class="button">Near By</div>
-            <div id="byname" class="button">By Name</div>
-            <button id="rage-button">Rage</button>
-            <script>
-            $("#rage-button").click(function () {
-                $.geolocation.find(function(location){
-                   alert(location.latitude+", "+location.longitude);
-                });
-            });
-            </script>
+    <div class="container">
+        <h1>iRage</h1>
+        <h2>Express your rage</h2>
+        <h3>Find a business:</h3>
+        <div id="nearby" class="button">Near By</div>
+        <div id="byname" class="button">
+            By Name
+            <input id="search-text" type="text" value="Rogers mobile"/>
         </div>
+        <button id="rage-button">Rage</button>
+        <script>
+        $("#rage-button").click(function () {
+            $.geolocation.find(function(location){
+               alert(location.latitude+", "+location.longitude);
+               IRAGE.findByName($("#search-text").val());
+            });
+        });
+        </script>
+
+        <h3>Results</h3>
+        <div id="results">
+            <div class="result">
+                <div>Example shop 1</div>
+                <div>123 123 1234</div>
+            </div>
+        </div>
+    </div>
     </body>
 </html>
