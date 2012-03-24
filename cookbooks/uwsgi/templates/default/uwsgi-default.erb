@@ -1,0 +1,13 @@
+DAEMON_OPTS=" \
+    --socket <%= node.default.uwsgi.socket %> \
+<% if node.default.uwsgi.master %>
+    --master \
+    --no-orphans \
+    --processes <%= node.default.uwsgi.processes %> \
+<% end %>
+    --uid <%= node.default.uwsgi.user %>\
+    --gid <%= node.default.uwsgi.group %>\
+    --chdir <%= node.default.uwsgi.app_dir %>\
+    --module <%= node.default.uwsgi.module %> \
+    --callable <%= node.default.uwsgi.callable %> \
+"

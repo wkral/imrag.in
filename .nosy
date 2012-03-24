@@ -1,0 +1,4 @@
+{
+    "exec": "sudo /etc/init.d/uwsgi reload; nosetests",
+    "watch": ["*.py"]
+}
