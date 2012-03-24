@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>I'm raging at: {{business.name}}</title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>{{business.name}}</h1>
+            <ul>
+                {% for contact in business.contacts %}
+                <li>{{contact.type}}: {{contact.value}}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </body>
+</html>
