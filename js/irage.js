@@ -12,7 +12,7 @@ IRAGE.findByName = function (text) {
        data: { 
            what: text,
            fmt: 'json',
-           where: 'canada`', // XXX: need bigger place to get more chance 
+           where: 'Vancouver', // XXX: need bigger place to get more chance 
            apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
            pgLen: 5,
            UID: Math.random(), 
@@ -21,8 +21,21 @@ IRAGE.findByName = function (text) {
     });
 };
 
-IRAGE.findByLocation = function (text) {
-    throw "not implemented";
+IRAGE.findByLocation = function (lon,lat) {
+    //http://www.yellowapi.com/docs/places/#findbusiness
+    $.ajax({
+       url: "/yellowapi/FindBusiness/",  // XXX: yellowapi doesnt to jsonP :(
+       dataType: 'json',
+       data: { 
+           what: 'business',
+           fmt: 'json',
+           where: 'cZ'+lon+','+lat, // cZ{longitude},{latitude}
+           apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
+           pgLen: 5,
+           UID: Math.random(), 
+       },
+       success: IRAGE.display,
+    });
 };
 
 
@@ -64,12 +77,23 @@ IRAGE.getYellowapiBusnCallBack = function (name, prov, id, url, uid) {
                success: function (busndata) {
                    var div = $("#results");
                    if (busndata.phones) {
-                       div.append(
+                       var result1 = $(
                         '<div class="result">'
                         +'<div>'+name+'</div>'
                         +'<div>'+busndata.phones[0].dispNum+'</div>'
                         +'</div>'
                         );
+                       result1.appendTo(div);
+                       $.ajax({
+                           url: "/businesses/",  // XXX: yellowapi doesnt to jsonP :(
+                           type: 'POST',
+                           dataType: "json",
+                           contentType: "application/json",
+                           data: {'name': name, 'contacts': [ 
+                                {'type': "Telephone", "value": "555-1234"},
+                                //{'type': 'Email', 'value': 'someone@somepleace.com'} 
+                            ] }, 
+                       });
                    }
                }
             });
