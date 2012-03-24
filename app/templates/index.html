@@ -2,8 +2,8 @@
 <html>
     <head>
         <title>iRage</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
 	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
@@ -12,12 +12,13 @@
     <body>
 	<div data-role="page">
 	    <div data-role="content" class="container">
-		<h1>iRage</h1>
-		<h2>Express your rage</h2>
-		<h3>Find a business:</h3>
-		<div id="nearby" class="button">Near By</div>
-		<div id="byname" class="button">By Name</div>
-		<a href="" id="rage-button" data-role="button" data-inline="true" data-theme="b">Rage</a>
+		<form action="" method="post">
+		    <div data-role="fieldcontain">
+			 <label for="searchbiz">Search Business by Name</label>
+			<input type="text" name="searchbiz" id="searchbiz" value=""  />
+		    </div>
+		</form>
+		<a href="" id="rage-button" data-role="button" data-inline="true" data-theme="a" class="button-rage">RAGE !!!</a>
 		<script>
 		$("#rage-button").click(function () {
 		    $.geolocation.find(function(location){
