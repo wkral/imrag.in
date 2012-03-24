@@ -14,3 +14,8 @@ def index():
 def business_profile(name):
     business = data.business(name)
     return render_template('business.html', business=business)
+
+
+@app.route('/near-by')
+def near_by():
+    return render_template('near-by.html')
