@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>iRage</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
     </head>
     <body>
         <h1>iRage</h1>
@@ -9,5 +11,13 @@
         <h3>Find a business:</h3>
         <div id="nearby" class="button">Near By</div>
         <div id="byname" class="button">By Name</div>
+        <button id="rage-button">Rage</button>
+        <script>
+        $("#rage-button").click(function () {
+            $.geolocation.find(function(location){
+               alert(location.latitude+", "+location.longitude);
+            });
+        });
+        </script>
     </body>
 </html>
