@@ -10,7 +10,7 @@ IRAGE.findByName = function (text) {
        url: "/yellowapi/FindBusiness/",  // XXX: yellowapi doesnt to jsonP :(
        dataType: 'json',
        data: { 
-           what: text,
+           what: 'b',
            fmt: 'json',
            where: 'canada`', // XXX: need bigger place to get more chance 
            apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
@@ -27,7 +27,7 @@ IRAGE.findByLocation = function (lon,lat) {
        url: "/yellowapi/FindBusiness/",  // XXX: yellowapi doesnt to jsonP :(
        dataType: 'json',
        data: { 
-           what: '',
+           what: '*',
            fmt: 'json',
            where: 'cZ'+lon+','+lat, // cZ{longitude},{latitude}
            apikey:"ss6jdfmjsppb8wxqm6w7etaw",  // sandbox api key 
@@ -77,12 +77,23 @@ IRAGE.getYellowapiBusnCallBack = function (name, prov, id, url, uid) {
                success: function (busndata) {
                    var div = $("#results");
                    if (busndata.phones) {
-                       div.append(
+                       var result1 = $(
                         '<div class="result">'
                         +'<div>'+name+'</div>'
                         +'<div>'+busndata.phones[0].dispNum+'</div>'
                         +'</div>'
                         );
+                       result1.appendTo(div);
+                       $.ajax({
+                           url: "/businesses/",  // XXX: yellowapi doesnt to jsonP :(
+                           dataType: 'json',
+                           type: 'POST',
+                           data: 
+                            {'name': name, 'contacts': [ 
+                                {'type': "Telephone", "value": "555-1234"},
+                                //{'type': 'Email', 'value': 'someone@somepleace.com'} 
+                            ] }, 
+                       });
                    }
                }
             });
