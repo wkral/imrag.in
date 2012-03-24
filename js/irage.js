@@ -79,25 +79,23 @@ IRAGE.getYellowapiBusnCallBack = function (name, prov, id, url, uid) {
                },
                success: function (busndata) {
                    var div = $("#results");
-                   if (busndata.phones) {
-                       var result1 = $(
-                        '<div class="result">'
-                        +'<div>'+name+'</div>'
-                        +'<div>'+busndata.phones[0].dispNum+'</div>'
-                        +'</div>'
-                        );
-                       result1.appendTo(div);
-                       $.ajax({
-                           url: "/businesses/",  // XXX: yellowapi doesnt to jsonP :(
-                           type: 'POST',
-                           dataType: "json",
-                           contentType: "application/json",
-                           data: {'name': name, 'contacts': [ 
-                                {'type': "Telephone", "value": "555-1234"},
-                                //{'type': 'Email', 'value': 'someone@somepleace.com'} 
-                            ] }, 
-                       });
-                   }
+                   var result1 = $(
+                    '<a href="/at/'+name+'">'+name+'</a><br/>'
+                    );
+                   result1.appendTo(div);
+                   $.ajax({
+                       url: "/businesses",  // XXX: yellowapi doesnt to jsonP :(
+                       type: 'POST',
+                       dataType: "json",
+                       contentType: "application/json",
+                       data: {'name': name, 'contacts': [ 
+                            {'type': "Telephone", "value": (busndata.phones ? busndata.phones[0].dispNum : 'none')},
+                            //{'type': 'Email', 'value': 'someone@somepleace.com'} 
+                        ] },
+                       success: function (url) {
+                           result1.attr("href", url);
+                       }
+                   });
                }
             });
     };
