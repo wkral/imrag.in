@@ -4,6 +4,18 @@ server {
 
   access_log  <%= node[:nginx][:log_dir] %>/localhost.access.log;
 
+  location /css/ {
+    alias <%= node.base.app_dir %>/css/;
+  }
+
+  location /images/ {
+    alias <%= node.base.app_dir %>/images/;
+  }
+
+  location /favicon.ico {
+    alias <%= node.base.app_dir %>/favicon.ico;
+  }
+
   location / {
     uwsgi_pass unix://<%= node[:uwsgi][:socket] %>;
     include uwsgi_params;
