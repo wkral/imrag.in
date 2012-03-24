@@ -13,13 +13,21 @@
 	<div data-role="page">
 	    <div data-role="content" class="container">
 		<form action="" method="post">
-		    <div data-role="fieldcontain">
-			 <label for="searchbiz">Search Business by Name</label>
-			<input type="text" name="searchbiz" id="searchbiz" value=""  />
+		    <div data-role="fieldcontain" class="ui-hide-label">
+			 <label for="searchbiz">Business Name</label>
+			<input type="text" name="searchbiz" id="searchbiz" value="" placeholder="Business Name" />
 		    </div>
 		</form>
-
 	    </div>
+	    <div data-role="footer" data-position="fixed" data-id="thefooternav">
+		<div data-role="navbar">
+		    <ul>
+		      <li><a href="index.html" class="ui-state-persist">Search</a></li>
+		      <li><a href="near-by.html">Nearby</a></li>
+		    </ul>
+		</div>
+	    </div>
+	    
 	</div>
     </body>
 </html>
