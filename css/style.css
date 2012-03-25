@@ -1,10 +1,45 @@
-.container {
-    float: left;
-    width: 960px;
-    margin: 0 auto;
-}
 
 .button-rage {
-    background: red;
-    
+background: #ff3019; /* Old browsers */
+background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* IE10+ */
+background: linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+width:300px;
+height:100px;
+font-size:40px;
+}
+
+.center {
+    padding-top:5%;
+}
+
+.bg {
+    background-color:black;
+}
+
+.logo-rage{
+    width:30%;
+    padding-left:25%;
+}
+
+.img-flame1{
+    width:30px;
+    padding-right:10%;
+}
+
+.img-flame2{
+    width:30px;
+    padding-left:10%;
+}
+
+.overflow{
+    overflow:hidden;
+}
+
+.botfont{
+    font-size:22px !important;
 }

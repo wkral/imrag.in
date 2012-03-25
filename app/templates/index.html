@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
@@ -19,14 +19,14 @@
 		</h1>
 	    </div>
 	    <div data-role="content">
-		<img src="rage.png" class="logo-rage">
+		<img src="/images/rage.png" class="logo-rage">
 		<form action="" method="post">
 		    <div data-role="fieldcontain" class="ui-hide-label center">
 			<label for="searchbiz">Business Name</label>
 			<input type="text" name="searchbiz" id="searchbiz" value="" placeholder="Business Name" />
 		    </div>
 		</form>
-		<div style="padding-left:70%"><a href="#" id="search-button" data-role="button" data-inline="true" data-theme="a">Search</a></div>
+		<div style="padding-left:80%"><a href="#" id="search-button" data-role="button" data-inline="true" data-theme="a">Search</a></div>
 		<script>
 		    $("#search-button").click(function () {
 			IRAGE.findByName($("#searchbiz").val());
@@ -37,8 +37,8 @@
 	    <div data-role="footer" data-position="fixed" data-id="thefooternav" data-theme="d">
 		<div data-role="navbar" data-theme="d">
 		    <ul>
-		      <li><a href="/" class="ui-state-persist"><img src="flame.png" class="img-flame1"/>Search <img src="flame.png" class="img-flame2"/></a></li>
-		      <li><a href="/near-by" data-theme="a">Nearby</a></li>
+		      <li><a href="/" class="ui-state-persist botfont"><img src="/images/flame.png" class="img-flame1"/>Search<img src="/images/flame.png" class="img-flame2"/></a></li>
+		      <li><a href="/near-by" class="botfont" data-theme="a">Nearby</a></li>
 		    </ul>
 		</div>
 	    </div>  
