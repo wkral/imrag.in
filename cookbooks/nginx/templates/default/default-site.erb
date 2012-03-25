@@ -20,7 +20,7 @@ server {
     alias <%= node.base.app_dir %>/favicon.ico;
   }
 
-  location /yellow/ {
+  location /yellowapi/ {
     proxy_pass http://api.sandbox.yellowapi.com/;
     proxy_set_header  X-Real-IP  $remote_addr;
   }
