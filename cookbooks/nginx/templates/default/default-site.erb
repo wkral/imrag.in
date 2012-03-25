@@ -20,8 +20,14 @@ server {
     alias <%= node.base.app_dir %>/favicon.ico;
   }
 
+  location /yellow/ {
+    proxy_pass http://api.sandbox.yellowapi.com/;
+    proxy_set_header  X-Real-IP  $remote_addr;
+  }
+
   location / {
     uwsgi_pass unix://<%= node[:uwsgi][:socket] %>;
     include uwsgi_params;
   }
+
 }

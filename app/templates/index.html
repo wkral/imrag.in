@@ -18,7 +18,7 @@
 		    
 		</h1>
 	    </div>
-	    <div data-role="content" class="container">
+	    <div data-role="content">
 		<img src="rage.png" class="logo-rage">
 		<form action="" method="post">
 		    <div data-role="fieldcontain" class="ui-hide-label center">
@@ -26,7 +26,7 @@
 			<input type="text" name="searchbiz" id="searchbiz" value="" placeholder="Business Name" />
 		    </div>
 		</form>
-		<div style="padding-left:85%"><a href="#" id="search-button" data-role="button" data-inline="true" data-theme="a">Search</a></div>
+		<div style="padding-left:70%"><a href="#" id="search-button" data-role="button" data-inline="true" data-theme="a">Search</a></div>
 		<script>
 		    $("#search-button").click(function () {
 			IRAGE.findByName($("#searchbiz").val());
@@ -34,11 +34,11 @@
 		</script>
 		<div id="results"></div>
 	    </div>
-	    <div data-role="footer" data-position="fixed" data-id="thefooternav">
-		<div data-role="navbar">
+	    <div data-role="footer" data-position="fixed" data-id="thefooternav" data-theme="d">
+		<div data-role="navbar" data-theme="d">
 		    <ul>
-		      <li><a href="index.html" class="ui-state-persist ui-btn-active">Search</a></li>
-		      <li><a href="near-by.html">Nearby</a></li>
+		      <li><a href="/" class="ui-state-persist"><img src="flame.png" class="img-flame1"/>Search <img src="flame.png" class="img-flame2"/></a></li>
+		      <li><a href="/near-by" data-theme="a">Nearby</a></li>
 		    </ul>
 		</div>
 	    </div>  
