@@ -2,8 +2,9 @@
 <html>
     <head>
         <title>iRage</title>
-        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
 	<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.geolocation.js"></script>
@@ -29,14 +30,14 @@
 		</script>
 		<div id="results"></div>
 	    </div>
-	    <div data-role="footer" data-position="fixed" data-id="thefooternav">
-		<div data-role="navbar">
+	    <div data-role="footer" data-position="fixed" data-id="thefooternav" data-theme="d">
+		<div data-role="navbar" data-theme="d">
 		    <ul>
-		      <li><a href="/">Search</a></li>
-		      <li><a href="/near-by" class="ui-state-persist ui-btn-active">Nearby</a></li>
+		      <li><a href="/" class="botfont">Search</a></li>
+		      <li><a href="/near-by" class="ui-state-persist botfont" data-theme="a"><img src="/images/flame.png" class="img-flame1"/>Nearby<img src="/images/flame.png" class="img-flame2"/></a></li>
 		    </ul>
 		</div>
-	    </div>
+	    </div>  
 	</div>
     </body>
 </html>

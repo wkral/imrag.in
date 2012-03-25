@@ -22,9 +22,8 @@ font-size:40px;
 }
 
 .logo-rage{
-    width:300px;
-    padding-left:15%;
-    padding-top:5%;
+    width:30%;
+    padding-left:25%;
 }
 
 .img-flame1{
@@ -35,4 +34,12 @@ font-size:40px;
 .img-flame2{
     width:30px;
     padding-left:10%;
+}
+
+.overflow{
+    overflow:hidden;
+}
+
+.botfont{
+    font-size:22px !important;
 }
