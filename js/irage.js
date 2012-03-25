@@ -86,7 +86,7 @@ IRAGE.getYellowapiBusnCallBack = function (name, prov, id, url, uid) {
                    $.ajax({
                        url: "/businesses",  // XXX: yellowapi doesnt to jsonP :(
                        type: 'POST',
-                       dataType: "json",
+                       dataType: "text",
                        contentType: "application/json",
                        data: {'name': name, 'contacts': [ 
                             {'type': "Telephone", "value": (busndata.phones ? busndata.phones[0].dispNum : 'none')},
