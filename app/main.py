@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request
 
 from app import data
 from app.util import urlify, find_phone
@@ -15,7 +15,7 @@ def index():
 @app.route('/at/<name>')
 def business_profile(name):
     business = data.business(name)
-    return render_template('business.html', business=business)
+    return render_template('business.html', business=business, permalink=name)
 
 
 @app.route('/rage/<name>', methods=['POST'])
@@ -24,7 +24,7 @@ def rage(name):
     phone = find_phone(business['contacts'])
     print phone
     twilio_service.makecall(phone, "Boris, we should win")
-    return make_response(status_code=201)
+    return 'Raged!'
 
 
 @app.route('/businesses/', methods=['POST'])

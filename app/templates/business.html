@@ -21,6 +21,9 @@
                 <li>{{contact.type}}: {{contact.value}}</li>
                 {% endfor %}
             </ul>
+            <form action="/rage/{{permalink}}" method="POST">
+                <input type="submit" value="RAGE!" />
+            </form>
         </div>
 	<div data-role="footer" data-position="fixed" data-id="thefooternav" data-theme="a">
 	    <div data-role="navbar" data-theme="d">
@@ -29,6 +32,6 @@
 		  <li><a href="/near-by" class="botfont" data-theme="a">Nearby</a></li>
 		</ul>
 	    </div>
-	</div> 		
+	</div>
     </body>
 </html>
